@@ -1,0 +1,32 @@
+{
+  "name": "sports-pal",
+  "version": "1.0.0",
+  "description": "All in one app to find a pal to play local games and to keep up to date with professional games.",
+  "main": "server.js",
+  "dependencies": {
+    "auth0-js": "^9.6.1",
+    "authenticate": "^0.1.5",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.5.3",
+    "passport-auth0": "^0.6.1",
+    "sequelize": "^4.37.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalamanca23/sportspal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsalamanca23/sportspal/issues"
+  },
+  "homepage": "https://github.com/jsalamanca23/sportspal#readme",
+  "keywords": []
+}
