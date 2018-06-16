@@ -1,0 +1,32 @@
+body {
+    background-image: url("http://3.bp.blogspot.com/-wd9xkyaJG5A/T5hS6ysBraI/AAAAAAAADrE/cPuj7iQJq_Y/s1600/san+002.JPG");
+}
+.container {
+    color:white;
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+    background:rgba(192,192,192,0.3);
+}
+.card {
+    min-height: 300px;
+    color:black;
+}
+.d-block{
+    max-height: 300px;
+}
+.logo{
+    width: 80px;
+    margin: 20px;
+}
+.header{
+    width: 100%;
+}
+.footer{
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    min-height: 5%;
+}
