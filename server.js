@@ -1,10 +1,11 @@
 // Core Libraries
-const express = require("express");
-const bodyParser = require("body-parser");
+var express = require("express");
+var bodyParser = require("body-parser");
 
-const app = express();
+var app = express();
+var db = require('./models');
 
-const PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-const exphbs = require("express-handlebars");
+var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -21,7 +22,7 @@ app.set("view engine", "handlebars");
 new require("./routes/api.js")(app);
 new require('./routes/html.js')(app);
 
-const db = require('./models/index.js');
+
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
 
