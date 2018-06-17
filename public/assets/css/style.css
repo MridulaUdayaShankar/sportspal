@@ -1,5 +1,9 @@
 body {
     background-image: url("http://3.bp.blogspot.com/-wd9xkyaJG5A/T5hS6ysBraI/AAAAAAAADrE/cPuj7iQJq_Y/s1600/san+002.JPG");
+    overflow: scroll;
+}
+.row{
+    margin-top:20px;
 }
 .container {
     color:white;
@@ -8,7 +12,6 @@ body {
     background:rgba(192,192,192,0.3);
 }
 .card {
-    min-height: 300px;
     color:black;
 }
 .d-block{
@@ -20,13 +23,15 @@ body {
 }
 .header{
     width: 100%;
+    background:rgba(192,192,192,0.3);
 }
 .footer{
     color: white;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     left: 0px;
     bottom: 0px;
     width: 100%;
-    min-height: 5%;
+    min-height: 8%;
+    background:rgba(192,192,192,0.3);
 }
