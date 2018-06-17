@@ -1,4 +1,13 @@
 $(function () {
+
+    $('#login-submit').on('click', function (event) {
+        var userInfo = {
+            name: 
+            email: 
+            password: 
+        }
+    });
+
     //hide when Document loads, and show only when the respective buttons are clicked
     $("#create-game-form").hide();
     $("#card-live-stats").hide();
@@ -9,8 +18,8 @@ $(function () {
         $("#create-game-form").show();
     });
     //submit form handler
-    $(".create-game-button").on("submit", function (event) {
-        
+    $(".create-game-button").on("click", function (event) {
+
         var createGameForm = {
 
             name: $("#name").val().trim(),
