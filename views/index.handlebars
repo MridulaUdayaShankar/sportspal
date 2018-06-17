@@ -1,55 +1,42 @@
+{{#unless login}}
 <div class="header">
     <img class="logo" src="/assets/images/sportspal.png">
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="createGame" data-toggle="list" href="#list-home" role="tab"
-                    aria-controls="createGame">Create Game</a>
-                <a class="list-group-item list-group-item-action" id="yourGames" data-toggle="list" href="#list-profile" role="tab"
-                    aria-controls="yourGames">Your Games</a>
-                <a class="list-group-item list-group-item-action" id="liveStats" data-toggle="list" href="#list-settings" role="tab"
-                    aria-controls="liveStats">Live Stats</a>
+                <a class="list-group-item list-group-item-action active" id="createGame" data-toggle="list" href="#list-create-game" role="tab"
+                    aria-controls="create-game">Create Game</a>
+                <a class="list-group-item list-group-item-action" id="yourGames" data-toggle="list" href="#list-your-games" role="tab" aria-controls="your-games">Your Games</a>
+                <a class="list-group-item list-group-item-action" id="liveStats" data-toggle="list" href="#list-live-stats" role="tab" aria-controls="live-stats">Live Stats</a>
             </div>
         </div>
-        <div class="col-md-8">
-            <table class="table">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Game</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-md-6">
+            <div id="create-game-form">
+                <h2>Create Game</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="game-name">Name</label>
+                        <input type="text" class="form-control" id="game-name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-date">Choose Date</label>
+                        <input type="date" class="form-control" id="game-date" placeholder="" data-pickdate="">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-venue">Venue</label>
+                        <input type="text" class="form-control" id="game-venue" placeholder="">
+                    </div>
+                    <button id='create-game-button' class='btn btn-default'>Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-    
+
     <div class='row'>
         <div class='col-md-6'>
-            <div id="card-stats" class="card">
+            <div id="card-live-stats" class="card">
                 <div class="card-body">
                     <p class="card-text-dark"></p>
                 </div>
@@ -57,14 +44,93 @@
         </div>
 
         <div class="col-md-6">
-            <div id="card-stats" class="card">
+            <div id="card-your-games" class="card">
                 <div class="card-body">
                     <p class="card-text-dark"></p>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="footer">
         sportspal 2018
     </div>
 </div>
+{{/unless}}
+
+{{#if login}}
+<head>
+    <link rel="stylesheet" href="assets/css/login.css" type="text/css"/>
+</head>
+<div class="container">
+
+    <header>
+        <h1>Login and Registration Form</h1>
+
+    </header>
+    <section>
+        <div id="container_demo">
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form action="mysuperscript.php" autocomplete="on">
+                        <h1>Log in</h1>
+                        <p>
+                            <label for="username" class="uname"> Your email or username </label>
+                            <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+                        </p>
+                        <p>
+                            <label for="password" class="youpasswd"> Your password </label>
+                            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <p class="keeplogin">
+                            <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                            <label for="loginkeeping">Keep me logged in</label>
+                        </p>
+                        <p class="login button">
+                            <a href="http://cookingfoodsworld.blogspot.in/" target="_blank"></a>
+                        </p>
+                        <p class="change_link">
+                            Not a member yet ?
+                            <a href="#toregister" class="to_register">Join us</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div id="register" class="animate form">
+                    <form action="mysuperscript.php" autocomplete="on">
+                        <h1> Sign up </h1>
+                        <p>
+                            <label for="usernamesignup" class="uname">Your username</label>
+                            <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                        </p>
+                        <p>
+                            <label for="emailsignup" class="youmail"> Your email</label>
+                            <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com" />
+                        </p>
+                        <p>
+                            <label for="passwordsignup" class="youpasswd">Your password </label>
+                            <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <p>
+                            <label for="passwordsignup_confirm" class="youpasswd">Please confirm your password </label>
+                            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"
+                            />
+                        </p>
+                        <p class="signin button">
+                            <input type="submit" value="Sign up" />
+                        </p>
+                        <p class="change_link">
+                            Already a member ?
+                            <a href="#tologin" class="to_register"> Go and log in </a>
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{{/if}}
