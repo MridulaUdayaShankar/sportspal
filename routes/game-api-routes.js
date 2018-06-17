@@ -23,7 +23,7 @@ module.exports = function (app) {
             res.json(dbGame);
         });
     });
-    app.destroy('/api/games/:id', function (req, res) {
+    app.delete('/api/games/:id', function (req, res) {
         db.Game.destroy({
             where: {
               id: req.params.id

@@ -30,7 +30,7 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-        User.hasMany(models.Game, {
+        User.belongsToMany(models.Game, {
             through: {
                 model: models.GameUser
             }

@@ -34,9 +34,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Game.associate = (models) => {
-        Game.hasMany(models.User, {//retrieves one game with all its members
-            foreignKey: {
-                allowNull: false
+        Game.belongsToMany(models.User, {//retrieves one game with all its members
+            through: {
+                model: models.GameUser
             }
         });
     };

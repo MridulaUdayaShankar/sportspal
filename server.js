@@ -19,8 +19,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Add local routes to our express app
-new require("./routes/api.js")(app);
-new require('./routes/html.js')(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/game-api-routes.js")(app);
+require('./routes/html-routes.js')(app);
 
 
 db.sequelize.sync().then(function () {
