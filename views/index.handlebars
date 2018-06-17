@@ -35,16 +35,15 @@
     </div>
 
     <div class='row'>
-        <div class='col-md-6'>
-            <div id="card-live-stats" class="card">
+        <div class="col-md-6">
+            <div id="card-your-games" class="card">
                 <div class="card-body">
                     <p class="card-text-dark"></p>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div id="card-your-games" class="card">
+        <div class='col-md-6'>
+            <div id="card-live-stats" class="card">
                 <div class="card-body">
                     <p class="card-text-dark"></p>
                 </div>
@@ -56,11 +55,10 @@
         sportspal 2018
     </div>
 </div>
-{{/unless}}
+{{/unless}} {{#if login}}
 
-{{#if login}}
 <head>
-    <link rel="stylesheet" href="assets/css/login.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/login.css" type="text/css" />
 </head>
 <div class="container">
 
