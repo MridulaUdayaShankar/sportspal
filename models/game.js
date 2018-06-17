@@ -31,13 +31,14 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: null,
             validate: { min: -180, max: 180 }
         }
-    }); 
+    });
 
-    Game.associate = function (models) {
-        Game.belongsToMany(models.User, {through: models.GameUser});
-    }
-
-
-
+    Game.associate = (models) => {
+        Game.hasMany(models.User, {//retrieves one game with all its members
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Game;
 };
