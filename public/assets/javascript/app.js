@@ -4,16 +4,13 @@ $(function () {
     $("#card-live-stats").hide();
     $("#card-your-games").hide();
 
-    //create game on click handler
+    //create game - on click handler
     $(".createGame").on("click", function (event) {
         $("#create-game-form").show();
     });
     //submit form handler
     $(".create-game-button").on("submit", function (event) {
-        // if (!nameInput.val().trim().trim()) {
-        //     return;
-        //   }
-
+        
         var createGameForm = {
 
             name: $("#name").val().trim(),
@@ -29,7 +26,7 @@ $(function () {
             } else throw (err);
         });
     });
-    //your games on click handler
+    //your games - on click handler
     $(".yourGames").on("click", function (event) {
         event.preventDefault();
         $("#card-your-games").show();
@@ -42,7 +39,7 @@ $(function () {
 
         });
     });
-    //edit game on click handler
+    //edit game - on click handler
     $(".editGames").on("click", function (event) {
         event.preventDefault();
 
@@ -55,7 +52,7 @@ $(function () {
             }
         );
     });
-    //delete game on click handler
+    //delete game - on click handler
     $(".deleteGame").on("click", function (event) {
         event.preventDefault();
         $.ajax("/api/games/" + id, {
