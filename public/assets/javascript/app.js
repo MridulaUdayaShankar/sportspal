@@ -1,12 +1,37 @@
 $(function () {
 
     $('#login-submit').on('click', function (event) {
-        var userInfo = {
-            name: 
-            email: 
-            password: 
-        }
+        var userLoginInfo = {
+            email: $("#email").val().trim(),
+            password: $("#password").val().trim()
+        };
+        $.ajax({
+            type: 'POST',
+            url: "/",
+            data: userLoginInfo
+        }).then(function (data) {
+            console.log(data);
+            location.reload();
+        });
     });
+
+    $('#register-submit').on('click', function (event) {
+        var userRegisterInfo = {
+            usernamesignup: $('#usernamesignup').val().trim(),
+            emailsignup: $("#emailsignup").val().trim(),
+            passwordsignup: $("#passwordsignup").val().trim()
+        };
+        $.ajax({
+            type: 'POST',
+            url: "/user/create",
+            data: userRegisterInfo
+        }).then(function (data) {
+            console.log(data);
+            location.reload();
+        });
+    });
+
+
 
     //hide when Document loads, and show only when the respective buttons are clicked
     $("#create-game-form").hide();

@@ -1,9 +1,9 @@
 var db = require('../models');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcrypt');
 
 module.exports = function (app) {
 
-    //if user trys to sign in with the wrong password or email tell them that on the page
+    //login page: storing and comparing email and password,and redirecting to home page after login
     app.post('/', function (req, res) {
 
         // this is same as select * from users where email = 'the email the user typed in' limit 1
@@ -32,8 +32,8 @@ module.exports = function (app) {
             });
         })
     });
-
-    app.post('/create', function (req, res) {
+//register: storing name, email and password and redirecting to home page after signup
+    app.post('/user/create', function (req, res) {
         /* this is same as
             SELECT *
             FROM users
@@ -55,7 +55,7 @@ module.exports = function (app) {
                 bcrypt.genSalt(10, function (err, salt) {
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         db.User.create({
-                            email: req.body.email,
+                            emailsignup: req.body.email,
                             password_hash: hash
                         }).then(function (user) {
 
@@ -63,7 +63,7 @@ module.exports = function (app) {
                             req.session.user_id = user.id;
                             req.session.user_email = user.email;
 
-                            res.redirect('/person')
+                            res.redirect('/home')
                         });
                     });
                 });

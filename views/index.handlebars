@@ -1,6 +1,7 @@
 {{#unless login}}
 <div class="header">
-    <img class="logo" src="/assets/images/sportspal.png">
+    <h1>
+        <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
 </div>
 <div class="container">
     <div class="row">
@@ -55,17 +56,15 @@
         sportspal 2018
     </div>
 </div>
-{{/unless}} 
-{{#if login}}
+{{/unless}} {{#if login}}
 
 <head>
     <link rel="stylesheet" href="assets/css/login.css" type="text/css" />
 </head>
 <div class="container">
-
     <header>
-        <h1>Login/Registration Form</h1>
-
+        <h1>
+            <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
     </header>
     <section>
         <div id="container_demo">
@@ -76,8 +75,8 @@
                     <form action="submit" autocomplete="on">
                         <h1>Log in</h1>
                         <p>
-                            <label for="username" class="uname"> Your email or username </label>
-                            <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+                            <label for="email" class="uname"> Your email</label>
+                            <input id="email" name="email" required="required" type="text" placeholder="myemail or mymail@mail.com" />
                         </p>
                         <p>
                             <label for="password" class="youpasswd"> Your password </label>
@@ -99,16 +98,15 @@
                             <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="john" />
                         </p>
                         <p>
-                            <label for="emailsignup" class="youmail"> Your Email</label>
+                            <label for="emailsignup" class="youmail">Your Email</label>
                             <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@gmail.com" />
                         </p>
                         <p>
                             <label for="passwordsignup" class="youpasswd">Your password </label>
                             <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password" />
                         </p>
-                        <p class="signin button">
-                            <input type="submit" value="Sign up"/>
-                        </p>
+                        <button type='button' id='register-submit' class='btn btn-primary'>Register</button>
+
                         <p class="change_link">
                             Already a member?
                             <a href="#tologin" class="to_register"> Go and log in </a>
