@@ -6,6 +6,8 @@
   "dependencies": {
     "auth0-js": "^9.6.1",
     "authenticate": "^0.1.5",
+    "bcrypt": "^2.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
