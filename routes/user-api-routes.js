@@ -3,10 +3,10 @@ var db = require('../models');
 module.exports = function (app) {
 
     app.get("/api/users/", function (req, res) {
-        // var query = {};
-        // if (req.query.game_id) {
-        //     query.GameId = req.query.game_id;
-        //}
+        var query = {};
+        if (req.query.game_id) {
+            query.GameId = req.query.game_id;
+        }
         db.User.findAll({
             where: query,
             include: [db.Game]

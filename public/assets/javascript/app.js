@@ -10,6 +10,10 @@ $(function () {
     });
     //submit form handler
     $(".create-game-button").on("submit", function (event) {
+        // if (!nameInput.val().trim().trim()) {
+        //     return;
+        //   }
+
         var createGameForm = {
 
             name: $("#name").val().trim(),
@@ -17,20 +21,25 @@ $(function () {
             venue: $("#venue").val().trim(),
         };
         $.post("/api/games/", createGameForm, function (data) {
-            
+
             if (data) {
                 $("#game-name").html(data.name);
                 $("#game-date").html(data.date);
                 $("#game-venue").html(data.venue);
-            } else throw(err);
+            } else throw (err);
         });
     });
     //your games on click handler
     $(".yourGames").on("click", function (event) {
         event.preventDefault();
         $("#card-your-games").show();
-        $.get("/api/users/", function (data) {
-            
+
+        var id = $(this).attr('data-id');
+
+        $.ajax("/api/users/" + id, {
+            type: 'GET',
+        }).then(function (data) {
+
         });
     });
     //edit game on click handler

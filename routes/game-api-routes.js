@@ -19,7 +19,11 @@ module.exports = function (app) {
         });
     });
     app.post("/api/games/", function (req, res) {
-        db.Game.create(req.body).then(function (dbGame) {
+        db.Game.create({
+            name: req.body.name,
+            date: req.body.date,
+            venue: req.body.venue
+        }).then(function (dbGame) {
             res.json(dbGame);
         });
     });
