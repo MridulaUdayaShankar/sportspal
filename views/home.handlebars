@@ -1,5 +1,5 @@
-
-<div id="mma">DATA {{login}} {{arr}}</div> 
+<div id="mma">
+    DATA {{login}} {{arr}}</div>
 {{#if login}}
 <div class="container">
     <header>
@@ -58,10 +58,7 @@
         </div>
     </section>
 </div>
-{{/if}}
-
-
-{{#unless login}}
+{{/if}} {{#unless login}}
 <div class="header">
     <h1>
         <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
@@ -92,7 +89,7 @@
                         <label for="game-venue">Venue</label>
                         <input type="text" class="form-control" id="game-venue" placeholder="">
                     </div>
-                    <button id='create-game-button' class='btn btn-default'>Submit</button>
+                    <button type="button" id='create-game-button' class='btn btn-default'>Submit</button>
                 </form>
             </div>
         </div>
@@ -101,14 +98,14 @@
     <div class='row'>
         <div class="col-md-6">
             <div id="card-your-games" class="card">
-                <div class="card-body">
-                    <p class="card-text-dark"></p>
+                <div id="your-game-name" class="card-body">
+                    <p id= "your-game-date" class="card-text-dark"></p>
                 </div>
             </div>
         </div>
         <div class='col-md-6'>
             <div id="card-live-stats" class="card">
-                <div class="card-body">
+                <div id="live-stats" class="card-body">
                     <p class="card-text-dark"></p>
                 </div>
             </div>

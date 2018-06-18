@@ -18,10 +18,11 @@ module.exports = function (app) {
             res.json(dbGame);
         });
     });
+    //create game 
     app.post("/api/games/", function (req, res) {
         db.Game.create({
             name: req.body.name,
-            date: req.body.date,
+            event_date: req.body.date,
             venue: req.body.venue
         }).then(function (dbGame) {
             res.json(dbGame);

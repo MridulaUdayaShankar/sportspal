@@ -32,7 +32,7 @@ $(function () {
     });
 
     //hide when Document loads, and show only when the respective buttons are clicked
-    $("#create-game-form").hide();
+    // $("#create-game-form").hide();
     $("#card-live-stats").hide();
     $("#card-your-games").hide();
 
@@ -42,34 +42,32 @@ $(function () {
     });
     //submit form handler
     $("#create-game-button").on("click", function (event) {
-
+        event.preventDefault();
         var createGameForm = {
-            name: $("#name").val().trim(),
-            date: $("#date").val().trim(),
-            venue: $("#venue").val().trim(),
+            name: $("#game-name").val().trim(),
+            date: $("#game-date").val().trim(),
+            venue: $("#game-venue").val().trim(),
         };
         $.post("/api/games/", createGameForm, function (data) {
-
-            if (data) {
-                $("#game-name").html(data.name);
-                $("#game-date").html(data.date);
-                $("#game-venue").html(data.venue);
-            } else throw (err);
+            $('#your-game-name').html(data.name);
+            $('#your-game-date').html(data.event_date).append(data.venue);
         });
+
     });
+
     //your games - on click handler
     $("#yourGames").on("click", function (event) {
         event.preventDefault();
         $("#card-your-games").show();
 
-        var id = $(this).attr('data-id');
 
-        $.ajax("/api/users/" + id, {
+        $.ajax("/api/users/games/", {
             type: 'GET',
         }).then(function (data) {
             console.log('data received', data);
         });
     });
+
     //edit game - on click handler
     $("#editGames").on("click", function (event) {
         event.preventDefault();

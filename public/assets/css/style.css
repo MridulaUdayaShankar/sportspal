@@ -34,3 +34,6 @@ body {
     min-height: 8%;
     background:rgba(192,192,192,0.3);
 }
+#your-game{
+    letter-spacing: 2px;
+}
