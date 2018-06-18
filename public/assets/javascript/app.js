@@ -5,13 +5,13 @@ $(function () {
             email: $("#email").val().trim(),
             password: $("#password").val().trim()
         };
+
         $.ajax({
             type: 'POST',
-            url: "/user/:id",
+            url: '/user',
             data: userLoginInfo
         }).then(function (data) {
-            console.log(data);
-            location.reload();
+            window.location.pathname = '/home'
         });
     });
 
@@ -21,13 +21,13 @@ $(function () {
             emailsignup: $("#emailsignup").val().trim(),
             passwordsignup: $("#passwordsignup").val().trim()
         };
+
         $.ajax({
             type: 'POST',
             url: "/user/create",
             data: userRegisterInfo
         }).then(function (data) {
-            console.log(data);
-            location.reload();
+            // window.location.pathname = '/home'
         });
     });
 
@@ -37,14 +37,13 @@ $(function () {
     $("#card-your-games").hide();
 
     //create game - on click handler
-    $(".createGame").on("click", function (event) {
+    $("#createGame").on("click", function (event) {
         $("#create-game-form").show();
     });
     //submit form handler
-    $(".create-game-button").on("click", function (event) {
+    $("#create-game-button").on("click", function (event) {
 
         var createGameForm = {
-
             name: $("#name").val().trim(),
             date: $("#date").val().trim(),
             venue: $("#venue").val().trim(),
@@ -59,7 +58,7 @@ $(function () {
         });
     });
     //your games - on click handler
-    $(".yourGames").on("click", function (event) {
+    $("#yourGames").on("click", function (event) {
         event.preventDefault();
         $("#card-your-games").show();
 
@@ -68,11 +67,11 @@ $(function () {
         $.ajax("/api/users/" + id, {
             type: 'GET',
         }).then(function (data) {
-
+            console.log('data received', data);
         });
     });
     //edit game - on click handler
-    $(".editGames").on("click", function (event) {
+    $("#editGames").on("click", function (event) {
         event.preventDefault();
 
         $.ajax("/api/users/games/" + id, {
@@ -85,7 +84,7 @@ $(function () {
         );
     });
     //delete game - on click handler
-    $(".deleteGame").on("click", function (event) {
+    $("#deleteGame").on("click", function (event) {
         event.preventDefault();
         $.ajax("/api/games/" + id, {
             type: "DELETE",
@@ -97,7 +96,7 @@ $(function () {
         );
     });
     //live stats on click handler
-    $(".liveStats").on("click", function (event) {
+    $("#liveStats").on("click", function (event) {
         event.preventDefault();
         $("#card-live-stats").show();
         $.ajax("/api/live", {

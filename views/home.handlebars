@@ -1,0 +1,122 @@
+
+<div id="mma">DATA {{login}} {{arr}}</div> 
+{{#if login}}
+<div class="container">
+    <header>
+        <h1>
+            <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
+    </header>
+    <section>
+        <div id="container_demo">
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form action="submit" autocomplete="on">
+                        <h1>Log in</h1>
+                        <p>
+                            <label for="email" class="uname"> Your email</label>
+                            <input id="email" name="email" required="required" type="text" placeholder="myemail or mymail@mail.com" />
+                        </p>
+                        <p>
+                            <label for="password" class="youpasswd"> Your password </label>
+                            <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <button type='button' id='login-submit' class='btn btn-primary'>Login</button>
+                        <p class="change_link">
+                            Not a member yet?
+                            <a href="" class="to_register">Join us</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div id="register" class="animate form">
+                    <form action="submit" autocomplete="on">
+                        <h1> Sign up</h1>
+                        <p>
+                            <label for="usernamesignup" class="uname">Your Name</label>
+                            <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="john" />
+                        </p>
+                        <p>
+                            <label for="emailsignup" class="youmail">Your Email</label>
+                            <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@gmail.com" />
+                        </p>
+                        <p>
+                            <label for="passwordsignup" class="youpasswd">Your password </label>
+                            <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password" />
+                        </p>
+                        <button type='button' id='register-submit' class='btn btn-primary'>Register</button>
+
+                        <p class="change_link">
+                            Already a member?
+                            <a href="#tologin" class="to_register"> Go and log in </a>
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{{/if}}
+
+
+{{#unless login}}
+<div class="header">
+    <h1>
+        <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="createGame" data-toggle="list" href="#list-create-game" role="tab"
+                    aria-controls="create-game">Create Game</a>
+                <a class="list-group-item list-group-item-action" id="yourGames" data-toggle="list" href="#list-your-games" role="tab" aria-controls="your-games">Your Games</a>
+                <a class="list-group-item list-group-item-action" id="liveStats" data-toggle="list" href="#list-live-stats" role="tab" aria-controls="live-stats">Live Stats</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="create-game-form">
+                <h2>Create Game</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="game-name">Name</label>
+                        <input type="text" class="form-control" id="game-name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-date">Choose Date</label>
+                        <input type="date" class="form-control" id="game-date" placeholder="" data-pickdate="">
+                    </div>
+                    <div class="form-group">
+                        <label for="game-venue">Venue</label>
+                        <input type="text" class="form-control" id="game-venue" placeholder="">
+                    </div>
+                    <button id='create-game-button' class='btn btn-default'>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class="col-md-6">
+            <div id="card-your-games" class="card">
+                <div class="card-body">
+                    <p class="card-text-dark"></p>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-6'>
+            <div id="card-live-stats" class="card">
+                <div class="card-body">
+                    <p class="card-text-dark"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        sportspal 2018
+    </div>
+</div>
+{{/unless}}

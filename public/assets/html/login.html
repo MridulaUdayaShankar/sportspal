@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sports Pal</title>
+    <!-- Bootstrap and CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/login.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+</head>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/javascript/app.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <img class="logo" src="/assets/images/sportspal.png"> Sports Pal </h1>
+        </header>
+        <section>
+            <div id="container_demo">
+                <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="wrapper">
+                    <div id="login" class="animate form">
+                        <form action="submit" autocomplete="on">
+                            <h1>Log in</h1>
+                            <p>
+                                <label for="email" class="uname"> Your email</label>
+                                <input id="email" name="email" required="required" type="text" placeholder="myemail or mymail@mail.com" />
+                            </p>
+                            <p>
+                                <label for="password" class="youpasswd"> Your password </label>
+                                <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                            </p>
+                            <button type='button' id='login-submit' class='btn btn-primary'>Login</button>
+                            <p class="change_link">
+                                Not a member yet?
+                                <a href="" class="to_register">Join us</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div id="register" class="animate form">
+                        <form action="submit" autocomplete="on">
+                            <h1> Sign up</h1>
+                            <p>
+                                <label for="usernamesignup" class="uname">Your Name</label>
+                                <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="john" />
+                            </p>
+                            <p>
+                                <label for="emailsignup" class="youmail">Your Email</label>
+                                <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@gmail.com" />
+                            </p>
+                            <p>
+                                <label for="passwordsignup" class="youpasswd">Your password </label>
+                                <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="password" />
+                            </p>
+                            <button type='button' id='register-submit' class='btn btn-primary'>Register</button>
+
+                            <p class="change_link">
+                                Already a member?
+                                <a href="#tologin" class="to_register"> Go and log in </a>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

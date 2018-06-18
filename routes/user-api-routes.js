@@ -1,51 +1,28 @@
 var db = require('../models');
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
+// const myPlaintextPassword = 's0/\/\P4$$w0rD';
 module.exports = function (app) {
 
     //register: storing name, email and password and redirecting to home page after signup
     app.post('/user/create', function (req, res) {
-        /* this is same as
-            SELECT *
-            FROM users
-            WHERE email = 'email the user typed in'
-        */
-        db.User.findAll({
-            where: {
-                email: req.body.email
-            }
-        }).then(function (user) {
-            res.send(user);
-
-            if (user.length > 0) {
-                console.log(user);
-                res.send('The email or username already exists for this account');
-            } else {
-
-                // hash the password
-                bcrypt.genSalt(saltRounds, function (err, salt) {
-                    bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
-                        db.User.create({
-                            email: req.body.email,
-                            password: hash
-                        }).then(function (user) {
-                            console.log('user retrieved');
-                            req.session.logged_in = true;
-                            req.session.user_id = user.id;
-                            req.session.user_email = user.email;
-
-                            res.redirect('/home')
-                        });
-                    });
-                });
-            }
+        bcrypt.hash(req.body.passwordsignup, saltRounds, function (err, hash) {
+            // this is same as INSERT INTO users VALUE email = 'the email the user typed in' limit 1
+            db.User.create({
+                name: req.body.usernamesignup,
+                email: req.body.emailsignup,
+                password: hash
+            }).then(function(data) {
+                if (data) {
+                    var arr = []
+                    arr.push({login: true})
+                    res.redirect('/home', arr);
+                }
+            });
         });
     });
     //login page: storing and comparing email and password,and redirecting to home page after login
-    app.post('/user/:id', function (req, res) {
-
+    app.post('/user', function (req, res) {
         // this is same as select * from users where email = 'the email the user typed in' limit 1
         db.User.findOne({
             where: {
@@ -56,7 +33,7 @@ module.exports = function (app) {
                 res.redirect('/');
             } else {
                 // password_hash comes from user data model. At the moment this column is not inside the user data model
-                bcrypt.compare(myPlaintextPassword, hash, function (err, result) {
+                bcrypt.compare(req.body.password, user.password, function (err, result) {
                     if (result == true) {
                         res.redirect('/home');
                     } else {
@@ -69,6 +46,7 @@ module.exports = function (app) {
     });
 
     app.put('/api/users/games/:id', function (req, res) {
+        // this is same as UPDATE users WHERE email = 'the email the user typed in' limit 1
         db.User.update(req.body, {
             where: {
                 id: req.body.id
@@ -77,5 +55,4 @@ module.exports = function (app) {
             res.json(dbUser);
         });
     });
-
 };

@@ -5,9 +5,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var db = require('./models');
 
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
+
 var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
