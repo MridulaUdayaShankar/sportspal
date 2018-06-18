@@ -7,7 +7,7 @@ module.exports = function(app) {
 	});
 	app.get('/home', function (req, res) {
 		var data = { 
-			login : false
+			home : true
 		};
 		res.render("index", data);
     });

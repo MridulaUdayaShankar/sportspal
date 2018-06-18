@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
         //     validate: { min: -180, max: 180 }
         // }
     });
-
+    
     Game.associate = (models) => {
         Game.belongsToMany(models.User, {//retrieves one game with all its members
             through: {

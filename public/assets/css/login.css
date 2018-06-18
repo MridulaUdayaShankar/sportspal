@@ -158,7 +158,7 @@ a{
 
 /* remove codrops styles and reset the whole thing */
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-body{background:url(https://www.gannett-cdn.com/-mm-/10112615ba7550d99cb671b4f3829a1cadca251a/c=0-0-3210-1813&r=x803&c=1600x800/local/-/media/2017/07/03/WIGroup/Milwaukee/636346790474664396-GAN-20170613-ggw-ac1-329.JPG);
+body{background:url('https://www.gannett-cdn.com/-mm-/10112615ba7550d99cb671b4f3829a1cadca251a/c=0-0-3210-1813&r=x803&c=1600x800/local/-/media/2017/07/03/WIGroup/Milwaukee/636346790474664396-GAN-20170613-ggw-ac1-329.JPG');
 background-attachment:fixed;
 background-size:cover;
 }

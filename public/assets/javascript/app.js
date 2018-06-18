@@ -7,7 +7,7 @@ $(function () {
         };
         $.ajax({
             type: 'POST',
-            url: "/",
+            url: "/user/:id",
             data: userLoginInfo
         }).then(function (data) {
             console.log(data);
@@ -30,8 +30,6 @@ $(function () {
             location.reload();
         });
     });
-
-
 
     //hide when Document loads, and show only when the respective buttons are clicked
     $("#create-game-form").hide();

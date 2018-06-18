@@ -21,14 +21,14 @@ module.exports = function (sequelize, DataTypes) {
             isEmail: true
         },
 
-        localPassword: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             required: true,
             len: [2, 10]
         }
     });
-
+    
     // generating a hash
     User.generateHash = function (password) {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
@@ -39,11 +39,11 @@ module.exports = function (sequelize, DataTypes) {
         return bcrypt.compareSync(password, this.localPassword);
     };
     User.associate = function (models) {
-        User.belongsTo(models.Game, {//retrieves one game 
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        // User.belongsTo(models.Game, {//retrieves one game 
+        //     foreignKey: {
+        //         allowNull: false
+        //     }
+        // });
         User.belongsToMany(models.Game, {
             through: {
                 model: models.GameUser
