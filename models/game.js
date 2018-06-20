@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             is: ["^[a-z]+$", 'i'],
             allowNull: false
         },
-        event_date: {
+        date: {
             type: DataTypes.DATE,
             isDate: true,
         },
@@ -19,19 +19,12 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             is: ["^[a-z]+$", 'i'],
             allowNull: false
+        },
+        team: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
-        // latitude: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     defaultValue: null,
-        //     validate: { min: -90, max: 90 }
-        // },
-        // longitude: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true,
-        //     defaultValue: null,
-        //     validate: { min: -180, max: 180 }
-        // }
+        
     });
     
     Game.associate = (models) => {
