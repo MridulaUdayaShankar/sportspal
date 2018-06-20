@@ -15,7 +15,7 @@ $(function () {
 
         });
     });
-//register button click handler
+    //register button click handler
     $('#register-submit').on('click', function (event) {
         var userRegisterInfo = {
             usernamesignup: $('#usernamesignup').val().trim(),
