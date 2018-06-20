@@ -1,6 +1,6 @@
 body {
     background-image: url("http://3.bp.blogspot.com/-wd9xkyaJG5A/T5hS6ysBraI/AAAAAAAADrE/cPuj7iQJq_Y/s1600/san+002.JPG");
-    overflow: scroll;
+    overflow: auto;
 }
 .row{
     margin-top:20px;
@@ -27,7 +27,7 @@ body {
 .footer{
     color: white;
     text-align: center;
-    /* position: fixed; */
+    position: fixed;
     left: 0px;
     bottom: 0px;
     width: 100%;
@@ -36,4 +36,7 @@ body {
 }
 #your-game{
     letter-spacing: 2px;
+}
+table{
+    overflow: auto;
 }
