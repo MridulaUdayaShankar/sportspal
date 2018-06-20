@@ -35,6 +35,7 @@ module.exports = function (app) {
                 // password_hash comes from user data model. At the moment this column is not inside the user data model
                 bcrypt.compare(req.body.password, user.password, function (err, result) {
                     if (result == true) {
+                        console.log("hello")
                         res.redirect('/home');
                     } else {
                         res.send('Incorrect password');

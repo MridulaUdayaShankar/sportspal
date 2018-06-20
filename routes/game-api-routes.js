@@ -22,8 +22,10 @@ module.exports = function (app) {
     app.post("/api/games/", function (req, res) {
         db.Game.create({
             name: req.body.name,
-            event_date: req.body.date,
-            venue: req.body.venue
+            date: req.body.date,
+            venue: req.body.venue,
+            team: req.body.team
+
         }).then(function (dbGame) {
             res.json(dbGame);
         });
