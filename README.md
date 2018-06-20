@@ -19,7 +19,7 @@ We wanted to create something that could bring people together over the love of 
 
 ## Pre-requisites
 
-![demo]()
+![demo](demo.gif)
 
 #### Installation
 * NodeJs
