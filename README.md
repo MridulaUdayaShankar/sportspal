@@ -1,4 +1,6 @@
-# Sports Pal
+# Sports Pal 
+![sportspal](public/assets/images/sportspal.png)
+
 ## Getting Started
 All in one app to find a pal to play local soccer and to keep up to date with professional games.  
 
