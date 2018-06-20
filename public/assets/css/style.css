@@ -1,6 +1,6 @@
 body {
     background-image: url("http://3.bp.blogspot.com/-wd9xkyaJG5A/T5hS6ysBraI/AAAAAAAADrE/cPuj7iQJq_Y/s1600/san+002.JPG");
-    overflow: auto;
+    /* overflow: auto; */
 }
 .row{
     margin-top:20px;
@@ -12,9 +12,11 @@ body {
     /* font-family: Arial, Helvetica, sans-serif; */
     background:rgba(192,192,192,0.3);
     font-size: 20px;
+    overflow: auto;
 }
 .card {
     color:black;
+    text-align: left;
 }
 .d-block{
     max-height: 300px;
@@ -25,6 +27,9 @@ body {
 }
 .header{
     width: 100%;
+    color:white;
+    font-size: 50px;
+    text-align: center;
 }
 .footer{
     color:black;
@@ -33,17 +38,21 @@ body {
     left: 0px;
     bottom: 0px;
     width: 100%;
-    min-height: 8%;
+    min-height: 6%;
     background:rgba(192,192,192,0.3);
 }
 .card-img-top{
     width: 200px;
     height:400px;
 }
-.card-live-stats{
-    
-}
 table{
     overflow: auto;
     color:black;
+}
+
+form{
+    text-align: left;
+}
+#live-stats{
+    letter-spacing: 1px;
 }

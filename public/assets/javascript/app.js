@@ -112,8 +112,9 @@ $(function () {
     //live stats on click handler
     $("#liveStats").on("click", function (event) {
         event.preventDefault();
+        
         $("#card-live-stats").show();
-
+        // $("#card-live-stats").empty();
         $.ajax({
             url: '/api/stats',
             method: "GET"
