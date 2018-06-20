@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING,
             is: ["^[a-z]+$", 'i'],
-            allowNull: false
+            allowNull: false,
+            len: [2,8]
         },
         date: {
             type: DataTypes.DATE,
@@ -18,7 +19,8 @@ module.exports = function (sequelize, DataTypes) {
         venue: {
             type: DataTypes.STRING,
             is: ["^[a-z]+$", 'i'],
-            allowNull: false
+            allowNull: false,
+            len: [2,8]
         },
         team: {
             type: DataTypes.INTEGER,

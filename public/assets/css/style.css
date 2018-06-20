@@ -7,9 +7,11 @@ body {
 }
 .container {
     color:white;
-    text-align: center;
+    /* text-align: center; */
     font-family: 'Acme', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     background:rgba(192,192,192,0.3);
+    font-size: 20px;
 }
 .card {
     color:black;
@@ -25,7 +27,7 @@ body {
     width: 100%;
 }
 .footer{
-    color: white;
+    color:black;
     text-align: center;
     position: fixed;
     left: 0px;
@@ -34,9 +36,14 @@ body {
     min-height: 8%;
     background:rgba(192,192,192,0.3);
 }
-#your-game{
-    letter-spacing: 2px;
+.card-img-top{
+    width: 200px;
+    height:400px;
+}
+.card-live-stats{
+    
 }
 table{
     overflow: auto;
+    color:black;
 }
