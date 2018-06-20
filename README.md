@@ -7,7 +7,7 @@ All in one app to find a pal to play local soccer and to keep up to date with pr
 ## Motivation
 We wanted to create something that could bring people together over the love of soccer. We wanted this to be a all in one app for your soccer needs. Whenever you need more people to play a pick up game or you want to join a group, Sports Pal has your back! 
 
-## Technology used
+## Technologies used
 * jQuery and javascript AJAX
 * Html
 * Css
@@ -19,7 +19,7 @@ We wanted to create something that could bring people together over the love of 
 
 ## Pre-requisites
 
-![demo](demo.gif)
+![demo]()
 
 #### Installation
 * NodeJs
@@ -27,3 +27,6 @@ We wanted to create something that could bring people together over the love of 
 
 ### Authors
 * [Mridula](https://github.com/MridulaUdayaShankar)
+
+### Acknowledgements
+* Thank you for your constant support, Jerome Chennette, Amber Borroughs, Sasha Patsel, Ricky Feng 
