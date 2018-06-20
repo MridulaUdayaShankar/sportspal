@@ -1,5 +1,5 @@
 $(function () {
-
+//login button click handler
     $('#login-submit').on('click', function (event) {
         var userLoginInfo = {
             email: $("#email").val().trim(),
@@ -15,7 +15,7 @@ $(function () {
 
         });
     });
-
+//register button click handler
     $('#register-submit').on('click', function (event) {
         var userRegisterInfo = {
             usernamesignup: $('#usernamesignup').val().trim(),
