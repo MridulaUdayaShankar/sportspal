@@ -11,7 +11,8 @@ $(function () {
             url: '/user',
             data: userLoginInfo
         }).then(function (data) {
-            window.location.pathname = '/home'
+            window.location.pathname = '/home';
+
         });
     });
 
@@ -34,7 +35,7 @@ $(function () {
     //hide when Document loads, and show only when the respective buttons are clicked
     // $("#create-game-form").hide();
     $("#card-live-stats").hide();
-    $("#card-your-games").hide();
+    $("#table-your-games").hide();
 
     //create game - on click handler
     $("#createGame").on("click", function (event) {
@@ -47,23 +48,35 @@ $(function () {
             name: $("#game-name").val().trim(),
             date: $("#game-date").val().trim(),
             venue: $("#game-venue").val().trim(),
+            team: $('#game-team').val().trim()
         };
         $.post("/api/games/", createGameForm, function (data) {
-            $('#your-game-name').html(data.name);
-            $('#your-game-date').html(data.event_date).append(data.venue);
+            console.log('created game',data);
         });
 
     });
-
+ //function to display all the entries made using create game in a table , for "your games"
+ function displayResults(data) {
+    // Then, for each entry of that json...
+    data.forEach(function (element) {
+        // Append each of the animal's properties to the table
+        $("tbody").append("<tr><td>" + element.name + "</td>" +
+            "<td>" + element.date + "</td>" +
+            "<td>" + element.venue + "</td>" +
+            "<td>" + element.team + "</td></tr>");
+    });
+}
     //your games - on click handler
     $("#yourGames").on("click", function (event) {
         event.preventDefault();
-        $("#card-your-games").show();
-
+        $("#table-your-games").show();
 
         $.ajax("/api/users/games/", {
             type: 'GET',
         }).then(function (data) {
+
+            //call the function displayResults to get all the data displayed on the table
+            displayResults(data);
             console.log('data received', data);
         });
     });
