@@ -28,7 +28,7 @@ $(function () {
             url: "/user/create",
             data: userRegisterInfo
         }).then(function (data) {
-            // window.location.pathname = '/home'
+            window.location.pathname = '/';
         });
     });
 
@@ -51,21 +51,21 @@ $(function () {
             team: $('#game-team').val().trim()
         };
         $.post("/api/games/", createGameForm, function (data) {
-            console.log('created game',data);
+            console.log('created game', data);
         });
 
     });
- //function to display all the entries made using create game in a table , for "your games"
- function displayResults(data) {
-    // Then, for each entry of that json...
-    data.forEach(function (element) {
-        // Append each of the animal's properties to the table
-        $("tbody").append("<tr><td>" + element.name + "</td>" +
-            "<td>" + element.date + "</td>" +
-            "<td>" + element.venue + "</td>" +
-            "<td>" + element.team + "</td></tr>");
-    });
-}
+    //function to display all the entries made using create game in a table , for "your games"
+    function displayResults(data) {
+        // Then, for each entry of that json...
+        data.forEach(function (element) {
+            // Append each of the animal's properties to the table
+            $("tbody").append("<tr class='table-info'><td>" + element.name + "</td>" +
+                "<td>" + element.date + "</td>" +
+                "<td>" + element.venue + "</td>" +
+                "<td>" + element.team + "</td></tr>").append("<button type='button' id='editGames' class='btn btn-primary'>Edit</button>");
+        });
+    }
     //your games - on click handler
     $("#yourGames").on("click", function (event) {
         event.preventDefault();
@@ -74,7 +74,7 @@ $(function () {
         $.ajax("/api/users/games/", {
             type: 'GET',
         }).then(function (data) {
-
+            $("tbody").empty();
             //call the function displayResults to get all the data displayed on the table
             displayResults(data);
             console.log('data received', data);
@@ -84,14 +84,17 @@ $(function () {
     //edit game - on click handler
     $("#editGames").on("click", function (event) {
         event.preventDefault();
-
-        $.ajax("/api/users/games/" + id, {
+        $("#create-game-form").show();
+        $.ajax("/api/users/games/", {
             type: "PUT",
-        }).then(
-            function () {
-                console.log("all games");
-                location.reload();
-            }
+        }).then(function (data) {
+            var currentGame = $(this).data;
+            $(this).val(currentame.date).show();
+            $(this).val(currentGame.venue).show();
+            $(this).val(currentGame.team).show();
+
+            console.log("all games");
+        }
         );
     });
     //delete game - on click handler
@@ -110,11 +113,36 @@ $(function () {
     $("#liveStats").on("click", function (event) {
         event.preventDefault();
         $("#card-live-stats").show();
-        $.ajax("/api/live", {
 
+        $.ajax({
+            url: '/api/stats',
+            method: "GET"
         }).then(function (data) {
-            console.log("live stats data received", data);
+            console.log("data........", JSON.stringify(data));
+
+            if (data) {
+                // data.results.forEach(element => {
+                var element = data.results[0];
+
+                console.log("scheduled date", element.sport_event.scheduled);
+                console.log("season name", element.sport_event.season.name);
+                console.log("start_date", element.sport_event.season.start_date);
+                console.log("end_date", element.sport_event.season.end_date);
+
+
+                $('#live-stats').append('<p>' + 'Season: ', element.sport_event.season.name + '</p><br>' +
+                    '<p>' + "Scheduled date: ", element.sport_event.scheduled + '</p><br>' +
+                    '<p>' + "Start date: ", element.sport_event.season.start_date + '</p><br>' +
+                    '<p>' + "End date: ", element.sport_event.season.end_date + '</p>');
+                // });
+            } else {
+                console.log('error');
+            }
+
+            //on click of close button on the card, close the card
+            $("#close-button").on("click", function () {
+                $("#card-live-stats").hide();
+            })
         });
     });
-
 });
