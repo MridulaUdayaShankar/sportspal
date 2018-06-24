@@ -93,7 +93,7 @@ $(function () {
             $(this).val(currentGame.venue).show();
             $(this).val(currentGame.team).show();
 
-            console.log("all games");
+            console.log(currenGame);
         }
         );
     });
